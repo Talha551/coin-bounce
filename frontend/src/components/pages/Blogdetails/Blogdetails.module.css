@@ -1,0 +1,37 @@
+.detailsWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    margin: 10px 50px;
+  }
+  
+  .left {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 25px 0;
+  }
+  
+  .meta {
+    display: flex;
+    gap: 25px;
+    justify-content: flex-start;
+  }
+  
+  .photo {
+    margin: 10px auto;
+  }
+  
+  .photo img {
+    border-radius: 10px;
+  }
+  
+  .controls {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 20px;
+  }

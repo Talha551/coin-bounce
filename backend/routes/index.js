@@ -1,45 +1,47 @@
 const express = require('express');
-const authController =require ('../controller/authController');
+const authController = require('../controller/authController');
 const blogController = require('../controller/blogController');
 const commentController = require('../controller/commentController');
 const auth = require('../middlewares/auth');
 
 const router = express.Router();
 
-//user
-//register
-router.post('/register',authController.register);
+// user
 
-//login
-router.post('/login',authController.login);
+// register
+router.post('/register', authController.register);
 
-//logout
-router.post('/logout',auth,authController.logout);
+// login
+router.post('/login', authController.login);
 
-//refresh
-router.get('/refresh',authController.refresh);
+// logout
+router.post('/logout', auth, authController.logout)
 
-//blogs
-//create
-router.post('/blog',auth, blogController.create);
+// refresh
+router.get('/refresh', authController.refresh);
 
-//get all
-router.get('/blog/all',auth, blogController.getAll);
+// blog
 
-//get blog by id
-router.get('/blog/:id',auth, blogController.getById);
+// create
+router.post('/blog', auth, blogController.create);
 
-//update
-router.put('/blog',auth, blogController.update);
+// get all
+router.get('/blog/all', auth, blogController.getAll);
 
-//delete
-router.delete('/blog/:id',auth, blogController.delete);
+// get blog by id
+router.get('/blog/:id', auth, blogController.getById);
 
-//comments
-//create
-router.post('/comment',auth,commentController.create);
-//get
-router.get('/comment/:id',auth,commentController.getById);
+// update
+router.put('/blog', auth, blogController.update);
 
- 
+// delete
+router.delete('/blog/:id', auth, blogController.delete);
+
+// comment
+// create 
+router.post('/comment', auth, commentController.create);
+
+// get 
+router.get('/comment/:id', auth, commentController.getById);
+
 module.exports = router;
